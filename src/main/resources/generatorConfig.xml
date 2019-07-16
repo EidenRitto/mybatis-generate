@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry location="D:\instantclient_11_2\ojdbc6.jar" />
+
+    <context id="default" targetRuntime="MyBatis3">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!--创建Java类时是否取消生成注释-->
+        <commentGenerator type="diy.EidenCommentGenerator">
+            <!--<property name="suppressDate" value="true"/>-->
+            <!--<property name="suppressAllComments" value="true"/>-->
+            <property name="author" value="周晋平"/>
+            <property name="dateFormat" value="yyyy/MM/dd HH:mm:ss"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@192.168.8.113:1521:ORCL"
+                        userId="kwm4"
+                        password="qwer1234">
+            <!--解决生成代码获取不到注释的方法-->
+            <!--mysql-->
+            <!--<property name="useInformationSchema" value="true" />-->
+            <!--oracle-->
+            <property name="remarksReporting" value="true" />
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="cn.kiway.sjdd.jc.pojo" targetProject="./src/main/java"/>
+
+        <sqlMapGenerator targetPackage="cn.kiway.sjdd.jc.mapper" targetProject="src/main/java"/>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.kiway.sjdd.jc.mapper" targetProject="./src/main/java"/>
+
+
+        <!--<table tableName="YZJH_VIEW_POINT_QG" domainObjectName="YZJHViewPointQg"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false" >-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+            <!--<generatedKey column="PQ_ID" sqlStatement="ORACLE" identity="true" />-->
+            <!--<ignoreColumn column="FRED" />-->
+            <!--<columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />-->
+        <!--</table>-->
+        <table schema="KWM4" tableName="JC_FILE" domainObjectName="DdJcFile"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableUpdateByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+        </table>
+    </context>
+</generatorConfiguration>
