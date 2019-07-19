@@ -18,8 +18,8 @@
 
         <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
                         connectionURL="jdbc:oracle:thin:@192.168.8.113:1521:ORCL"
-                        userId="kwm4"
-                        password="qwer1234">
+                        userId="****"
+                        password="****">
             <!--解决生成代码获取不到注释的方法-->
             <!--mysql-->
             <!--<property name="useInformationSchema" value="true" />-->
