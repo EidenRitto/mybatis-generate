@@ -17,7 +17,7 @@ import java.util.List;
 public class Generator {
     public static void main(String[] args) throws Exception{
         List<String> warnings = new ArrayList<>();
-        File configFile = new File("D:\\projectIDEA\\mybatis-generate\\src\\main\\resources\\generatorConfig.xml");
+        File configFile = new File(System.getProperty("user.dir")+"\\src\\main\\resources\\generatorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configFile);
         DefaultShellCallback callback = new DefaultShellCallback(true);
